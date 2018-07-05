@@ -1,0 +1,31 @@
+<section id="pipe">
+
+  <section>
+    <h2>Traitement de fichiers</h2>
+  </section>
+
+  <section>
+    <h3>gulp.src</h3>
+    <p>L'instruction <code class="language-javascript">gulp.src</code> permet de définir les fichiers à traiter et retourne un <strong>stream</strong> NodeJS.</p>
+    <p>Cette fonction prend en paramètre une chaîne de caractères accéptant les wildcards (*) :</p>
+    <pre><code class="language-javascript">gulp.src('stylesheets/*.css')</code></pre>
+    <p>Il est également possible de définir un tableau contenant la liste des fichiers à traiter :</p>
+    <pre><code class="language-javascript">gulp.src(['bootstrap-*.css', 'font-awesome.css'])</code></pre>
+  </section>
+
+  <section>
+    <h3>gulp.pipe & gulp.dest</h3>
+    <p>L'instruction <code class="language-javascript">.pipe</code> de NodeJS permet ensuite de chaîner une liste de tâches.</p>
+    <p>Installez le package <strong>gulp-minify</strong> en utilisant NPM :</p>
+    <pre><code class="language-bash">npm install --save-dev gulp-clean-css</code></pre>
+    <p>Créez ensuite une tâche permettant de minimiser un fichier style.css et utilisez <code class="language-javascript">gulp.dest</code> pour déterminer le fichier de destination :</p>
+<pre><code class="language-javascript">const cleanCSS = require('gulp-clean-css')
+
+gulp.task('css', function() {
+  gulp.src('style.css')
+  .pipe(cleanCSS())
+  .pipe(gulp.dest('style.min.css'))
+})</code></pre>
+  </section>
+
+</section>

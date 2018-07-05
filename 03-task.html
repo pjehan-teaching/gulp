@@ -1,0 +1,37 @@
+<section id="task">
+
+  <section>
+    <h2>Task</h2>
+  </section>
+
+  <section>
+    <h3>Créer une tâche</h3>
+    <p>Gulp est un outil développer avec NodeJS permettant d'automatiser des tâches.</p>
+    <p>Pour créer une nouvelle tâche, il faut utiliser l'instruction <code class="language-javascript">gulp.task</code> :</p>
+<pre><code class="language-javascript">gulp.task('default', function() {
+  console.log('Default task')
+})</code></pre>
+  </section>
+
+  <section>
+    <h3>Exécuter une tâche</h3>
+    <p>Vous pour maintenant exécuter cette tâche en utilisant la commande suivant depuis le terminal :</p>
+    <pre><code class="language-bash">gulp default</code></pre>
+    <p>La tâche étant nommée <strong>default</strong>, vous pouvez également l'exécuter avec la commande :</p>
+    <pre><code class="language-bash">gulp</code></pre>
+  </section>
+
+  <section>
+    <h3>Dépendances</h3>
+    <p>Il est également possible d'ajouter des dépendances lorsque vous exécutez une tâche.</p>
+    <p>Pour cela, ajouter en second paramètre un tableau contenant la liste des tâches à exécuter :</p>
+    <pre><code class="language-javascript">gulp.task('first', function() {
+  console.log('First task')
+})
+
+gulp.task('second', ['first'], function() {
+  console.log('Second task')
+})</code></pre>
+  </section>
+
+</section>

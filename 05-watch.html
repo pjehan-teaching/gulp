@@ -1,0 +1,22 @@
+<section id="watch">
+
+  <section>
+    <h2>Watch</h2>
+  </section>
+
+  <section>
+    <h3>gulp.watch</h3>
+    <p>L'instruction <code class="language-javascript">gulp.watch</code> permet d'observer un ou plusieurs fichiers pour déclencher une tâche lorsque des modifications sont apportées.</p>
+    <p>Tout comme <code class="language-javascript">gulp.src</code>, <code class="language-javascript">gulp.watch</code> prend en premier paramètre une chaîne de caractères ou un tableau puis en second paramètre une fonction :</p>
+<pre><code class="language-javascript">gulp.task('watch', function() {
+  gulp.watch('js/**/*.js', function(event) {
+    console.log('File ' + event.path + ' was ' + event.type + ', running tasks...')
+  })
+})</code></pre>
+    <p>Cette tâche permet d'observer l'ensemble des fichiers JS contenus dans le dossier JS ou dans ses sous-dossiers.</p>
+    <footer>
+      <a href="#" class="info" style="font-size: 0.8em">Il est possible de définir un tableau de tâches en second paramètre</a>
+    </footer>
+  </section>
+
+</section>
